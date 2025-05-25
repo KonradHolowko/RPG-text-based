@@ -1,6 +1,7 @@
 public enum ROOM {
     CORRIDOR("Corridor"),
-    ARENA("Arena");
+    ARENA("Arena"),
+    SHOP("Shop");
 
     private final String name;
 
@@ -8,7 +9,8 @@ public enum ROOM {
         this.name = name;
     }
 
-    public String getName(){
+    @Override
+    public String toString(){
         return name;
     }
 }

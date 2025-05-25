@@ -9,6 +9,16 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        hero.setLocation(ROOM.ARENA);
+        hero.setLocation(ROOM.CORRIDOR);
+        hero.setLocation(ROOM.ARENA);
+        hero.setLocation(ROOM.SHOP);
+        hero.getLocation();
+
+
+
+
+
         while(true) {
             System.out.print("\n\n1. Attack\n" +
                     "2. Move\n" +
@@ -31,9 +41,7 @@ public class Main {
                 monster.getInfo();
             }
 
-            if(i == 2){
-                hero.setLocation(hero);
-            }
+
 
 
         }

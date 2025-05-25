@@ -4,7 +4,8 @@ public class Entity {
     private String name;
     private int hp;
     private WEAPONS weapon;
-    private LinkedList<Entity> location = new LinkedList<>();
+    private LinkedList<ROOM> location = new LinkedList<>();
+
 
     public Entity(String name, int hp, WEAPONS weapon) {
         setName(name);
@@ -24,8 +25,8 @@ public class Entity {
         this.weapon = weapon;
     }
 
-    public void setLocation(Entity entity){
-        location.add(entity);
+    public void setLocation(ROOM room) {
+        location.add(room);
     }
 
     public String getName() {
@@ -40,11 +41,14 @@ public class Entity {
         return this.weapon;
     }
 
-    public void getLocation(Entity entity){
+    public void getLocation() {
 
-        for(Entity l : location){
-            System.out.println(entity.getName());
-        }
+        String path = location.stream()
+                .map(ROOM::toString)    //convert each ROOM to string
+                .collect(java.util.stream.Collectors.joining(" -> "));
+        System.out.println(path);
+
+        System.out.println("\nPlayer current location is: " + location.getLast());
 
     }
 
@@ -59,8 +63,6 @@ public class Entity {
             this.hp = 0;
         }
     }
-
-
 
 
 }
