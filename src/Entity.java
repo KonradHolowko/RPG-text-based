@@ -1,7 +1,10 @@
+import java.util.LinkedList;
+
 public class Entity {
     private String name;
     private int hp;
     private WEAPONS weapon;
+    private LinkedList<Entity> location = new LinkedList<>();
 
     public Entity(String name, int hp, WEAPONS weapon) {
         setName(name);
@@ -21,6 +24,10 @@ public class Entity {
         this.weapon = weapon;
     }
 
+    public void setLocation(Entity entity){
+        location.add(entity);
+    }
+
     public String getName() {
         return this.name;
     }
@@ -31,6 +38,14 @@ public class Entity {
 
     public WEAPONS getWeapon() {
         return this.weapon;
+    }
+
+    public void getLocation(Entity entity){
+
+        for(Entity l : location){
+            System.out.println(entity.getName());
+        }
+
     }
 
     public void getInfo() {
@@ -44,6 +59,8 @@ public class Entity {
             this.hp = 0;
         }
     }
+
+
 
 
 }

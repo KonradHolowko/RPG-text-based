@@ -11,6 +11,7 @@ public class Main {
 
         while(true) {
             System.out.print("\n\n1. Attack\n" +
+                    "2. Move\n" +
                     "0. Leave\n" +
                     "Enter your choice: ");
 
@@ -29,6 +30,12 @@ public class Main {
                 hero.getInfo();
                 monster.getInfo();
             }
+
+            if(i == 2){
+                hero.setLocation(hero);
+            }
+
+
         }
     }
 }

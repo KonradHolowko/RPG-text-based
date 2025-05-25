@@ -1,8 +1,15 @@
 import java.util.LinkedList;
 
 public class Event {
-    LinkedList<ROOM> rooms = new LinkedList<>();
+    LinkedList<Entity> rooms = new LinkedList<>();
+
     public void move(Entity attacker){
+
+
+
+    }
+
+    public void getPath(){
 
     }
 }
