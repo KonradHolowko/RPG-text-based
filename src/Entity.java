@@ -34,7 +34,7 @@ public class Entity {
     }
 
     public void getInfo() {
-        System.out.print("\nName: " + this.name + "\nHP: " + this.hp + "\nWeapon: " + this.weapon + "\n");
+        System.out.print("\nName: " + this.name + " HP: " + this.hp + " Weapon: " + this.weapon);
     }
 
     public void takeDamage(int damage) {
