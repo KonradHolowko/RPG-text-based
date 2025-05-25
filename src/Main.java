@@ -15,6 +15,10 @@ public class Main {
         hero.setLocation(ROOM.SHOP);
         hero.getLocation();
 
+        Combat.attack(hero,monster);
+        monster.getInfo();
+
+
 
 
 
