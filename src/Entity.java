@@ -1,10 +1,12 @@
-import java.util.LinkedList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Entity {
     private String name;
     private int hp;
     private WEAPONS weapon;
-    private LinkedList<ROOM> location = new LinkedList<>();
+    private LinkedHashMap<Entity, ROOM> location = new LinkedHashMap<>();
 
 
     public Entity(String name, int hp, WEAPONS weapon) {
@@ -25,8 +27,8 @@ public class Entity {
         this.weapon = weapon;
     }
 
-    public void setLocation(ROOM room) {
-        location.add(room);
+    public void setLocation(ROOM room, Entity entity) {
+        location.put(entity, room);
     }
 
     public String getName() {
@@ -41,14 +43,10 @@ public class Entity {
         return this.weapon;
     }
 
-    public void getLocation() {
+    public void getLocation(Entity entity) {
 
-        String path = location.stream()
-                .map(ROOM::toString)    //convert each ROOM to string
-                .collect(java.util.stream.Collectors.joining(" -> "));
-        System.out.println(path);
 
-        System.out.println("\nPlayer current location is: " + location.getLast());
+
 
     }
 

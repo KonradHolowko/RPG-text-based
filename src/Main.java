@@ -9,45 +9,55 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        hero.setLocation(ROOM.ARENA);
-        hero.setLocation(ROOM.CORRIDOR);
-        hero.setLocation(ROOM.ARENA);
-        hero.setLocation(ROOM.SHOP);
-        hero.getLocation();
+//        hero.setLocation(ROOM.ARENA);
+//        hero.setLocation(ROOM.CORRIDOR);
+//        hero.setLocation(ROOM.ARENA);
+//        hero.setLocation(ROOM.SHOP);
+//        hero.getLocation();
+//
+//        Combat.attack(hero,monster);
+//        monster.getInfo();
 
-        Combat.attack(hero,monster);
-        monster.getInfo();
+//        Combat.battle(hero,monster);
+//        hero.getInfo();
+//        monster.getInfo();
 
+        hero.setLocation(ROOM.ARENA, hero);
 
+        hero.setLocation(ROOM.CORRIDOR, hero);
 
+        hero.setLocation(ROOM.ARENA, hero);
 
-
-
-        while(true) {
-            System.out.print("\n\n1. Attack\n" +
-                    "2. Move\n" +
-                    "0. Leave\n" +
-                    "Enter your choice: ");
-
-            int i = scanner.nextInt();
-
-            if(i == 0){
-                break;
-            }
+        hero.setLocation(ROOM.CORRIDOR, hero);
 
 
-            if (i == 1) {
-                hero.getInfo();
-                monster.getInfo();
-                Combat.attack(hero, monster);
-                Combat.attack(monster, hero);
-                hero.getInfo();
-                monster.getInfo();
-            }
+        hero.getLocation(hero);
 
 
 
+//        while (true) {
+//            System.out.print("\n\n1. Attack\n" +
+//                    "2. Move\n" +
+//                    "0. Leave\n" +
+//                    "Enter your choice: ");
+//
+//            int i = scanner.nextInt();
+//
+//            if (i == 0) {
+//                break;
+//            }
+//
+//
+//            if (i == 1) {
+//                hero.getInfo();
+//                monster.getInfo();
+//                Combat.attack(hero, monster);
+//                Combat.attack(monster, hero);
+//                hero.getInfo();
+//                monster.getInfo();
+//            }
+//        }
 
-        }
+
     }
 }

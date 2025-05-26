@@ -15,12 +15,27 @@ public class Combat {
         System.out.println("\nThe battle begin!" +
                 "\nThe dices are rolling...");
 
-        if((Math.random()*6) + 1 > 3){
-            attack(attacker,defender);
+
+        while(attacker.getHp() >= 0 || defender.getHp() >= 0){
+
+            if(attacker.getHp() == 0){
+                System.out.println("The player is dead");
+                break;
+            }
+            if(defender.getHp() == 0){
+                System.out.println("The enemy is dead");
+                break;
+            }
+
+            if((Math.random()*6) + 1 > 3){
+                attack(attacker,defender);
+            }
+            else{
+                attack(defender,attacker);
+            }
         }
-        else{
-            attack(defender,attacker);
-        }
+
+
 
 
     }
