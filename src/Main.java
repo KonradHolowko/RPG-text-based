@@ -22,6 +22,8 @@ public class Main {
 //        hero.getInfo();
 //        monster.getInfo();
 
+
+
         hero.setLocation(ROOM.ARENA, hero);
 
         hero.setLocation(ROOM.CORRIDOR, hero);
@@ -30,8 +32,15 @@ public class Main {
 
         hero.setLocation(ROOM.CORRIDOR, hero);
 
+        hero.setLocation(ROOM.ARENA, hero);
 
-        hero.getLocation(hero);
+
+        hero.getLocation();
+        hero.getInfo();
+
+
+
+
 
 
 

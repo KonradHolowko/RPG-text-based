@@ -1,12 +1,14 @@
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.List;
+import java.util.Random;
 
 public class Entity {
     private String name;
     private int hp;
     private WEAPONS weapon;
-    private LinkedHashMap<Entity, ROOM> location = new LinkedHashMap<>();
+    private List<ROOM> location = new ArrayList<>();
+    private Random random = new Random();
 
 
     public Entity(String name, int hp, WEAPONS weapon) {
@@ -28,7 +30,12 @@ public class Entity {
     }
 
     public void setLocation(ROOM room, Entity entity) {
-        location.put(entity, room);
+        this.location.add(room);
+
+        if(room.equals(ROOM.CORRIDOR) && randomBoolean()){
+            Combat.trap(entity);
+        }
+
     }
 
     public String getName() {
@@ -43,8 +50,11 @@ public class Entity {
         return this.weapon;
     }
 
-    public void getLocation(Entity entity) {
+    public void getLocation() {
 
+        for(int i = 0; i < this.location.size(); i++){
+            System.out.print(this.location.get(i) + " -> ");
+        }
 
 
 
@@ -60,6 +70,10 @@ public class Entity {
         if (this.hp < 0) {
             this.hp = 0;
         }
+    }
+
+    public boolean randomBoolean(){
+        return random.nextBoolean();
     }
 
 

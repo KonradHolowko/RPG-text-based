@@ -34,10 +34,11 @@ public class Combat {
                 attack(defender,attacker);
             }
         }
+    }
 
-
-
-
+    public static void trap(Entity entity){
+        entity.setHp(entity.getHp() - 10);
+        System.out.println("\n" + entity.getName() + " has fallen into trap!\n Health reduced by 10hp");
     }
 
 
